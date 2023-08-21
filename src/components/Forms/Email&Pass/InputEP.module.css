@@ -1,0 +1,16 @@
+.inputBox{
+    position: relative;
+    width: 280px;
+    height: 40px;
+    margin: 24px 0;
+    background: #eff3f8;
+}
+
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 5%;
+}

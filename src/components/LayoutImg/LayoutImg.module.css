@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.LayoutImg{
+    width: 45rem;
+    height: 495px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.imageGradient{
+    position: relative;
+    display: inline-block;
+}
+
+.wrapperText{
+    position: absolute;
+    display: flex;
+    width: 700px;
+    bottom: 85px;
+    left: 40px;
+    z-index: 2;
+}
+
+.textInGradient{
+    color: #FFF;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+    line-height: normal;
+}
+
+.darkGradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7200000286102295;
+    background: linear-gradient(189deg, rgba(20, 20, 20, 0.00) 0%, #141414 100%);
+}
+
+
+@media (min-width: 1921px){
+    .LayoutImg{
+        width: 800px;
+    }
+    .wrapperText{
+        width: 700px;
+    }
+    .textInGradient{
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1680px) and (max-width: 1920px){
+    .LayoutImg{
+        width: 800px;
+    }
+    .wrapperText{
+        width: 700px;
+    }
+    .textInGradient{
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1680px){
+    .LayoutImg{
+        width: 700px;
+    }
+    .wrapperText{
+        width: 600px;
+        bottom: 80px;
+        left: 82px;
+    }
+    .textInGradient{
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px){
+    .LayoutImg{
+        width: 700px;
+    }
+    .wrapperText{
+        width: 600px;
+        bottom: 80px;
+        left: 82px;
+    }
+    .textInGradient{
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px){
+    .LayoutImg{
+        width: 600px;
+    }
+    .wrapperText{
+        width: 550px;
+        bottom: 80px;
+        left: 132px;
+    }
+    .textInGradient{
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+    .LayoutImg{
+        display: none;
+    }
+    .wrapperText{
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .LayoutImg{
+        display: none;
+    }
+    .wrapperText{
+        display: none;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+    .LayoutImg{
+        display: none;
+    }
+    .wrapperText{
+       display: none;
+    }
+}
+
+@media (max-width: 319px){
+    .LayoutImg{
+        display: none;
+    }
+    .wrapperText{
+        display: none;
+    }
+    
+}
+
