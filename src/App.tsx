@@ -1,18 +1,11 @@
 import './App.css';
-import Footer from './components/Footer/Footer';
-import ForgotPass from './pages/ForgotPass/ForgotPass';
-import Login from './pages/Login/Login';
-import NewPass from './pages/NewPass/NewPass';
-import Register from './pages/Register/Register';
+import './app.module.css'
+import AppRouter from './router/AppRouter';
 
 function App() {
   return (
     <div className="App">
-      {/* <Login/> */}
-      {/* <Register /> */}
-      {/* <ForgotPass /> */}
-      <NewPass />
-
+      <AppRouter /> 
       
       
     </div>

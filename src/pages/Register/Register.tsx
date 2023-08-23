@@ -1,9 +1,9 @@
-import React from 'react'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import styles from './Register.module.css';
 import LayoutImg from '../../components/LayoutImg/LayoutImg';
 import MyFormRegister from '../../components/Forms/FormRegister/MyFormRegister';
+
 
 type Props = {}
 

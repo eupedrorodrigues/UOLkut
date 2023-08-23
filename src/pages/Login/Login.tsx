@@ -1,13 +1,15 @@
-import React from 'react'
+
 import Header from '../../components/Header/Header'
 import LayoutImg from '../../components/LayoutImg/LayoutImg';
 import styles from './Login.module.css'
 import Footer from '../../components/Footer/Footer';
 import MyFormLogin from '../../components/Forms/FormLogin/MyFormLogin';
 
+
 type Props = {}
 
 const Login = (props: Props) => {
+
   return (
     <div>
         <Header />

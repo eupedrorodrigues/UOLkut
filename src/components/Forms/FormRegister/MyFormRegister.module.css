@@ -25,21 +25,32 @@
     line-height: normal;
 }
 
-.inputRow{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .inputBox{
     position: relative;
-    width: 125px;
-    height: 45px;
+    width: 280px;
+    height: 40px;
     margin: 24px 0;
     background: #eff3f8;
-    margin-top: -10px;
 }
+
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 5%;
+}
+.inputRow{
+    position: relative;
+    width: 280px;
+    height: 40px;
+    margin: 24px 0;
+    background: #eff3f8;
+    display: flex;
+    border: 1px solid red;
+}
+/* 
 
 .inputSelect{
     display: flex;
@@ -59,62 +70,7 @@
     background: transparent;
     border: none;
     outline: none;
-}
-
-.inputBox input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 5%;
-}
-
-.rememberMe{
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.rememberMe label{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: #868686;
-    margin-left: 0.3em;
-}
-
-.rememberMe span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.2px;
-    padding-left: 2px;
-    border-radius: 3px;
-    border: 1px solid #DCDCDC;
-}
-
-.checkColor{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ED6D25;
-    width: 15px;
-    height: 15px;
-}
-
-.checkColor input{
-    opacity: 0;
-}
-
-.checkColor input:hover{
-    opacity: 75%;
-}
-
-.rememberMe input[type="checkbox"] {
-  background-color: #ED6D25;
-}
+} */
 
 .btnLogin{
     width: 100%;
@@ -133,43 +89,6 @@
 
 .btnLogin:hover{
     background: #b7541b;
-}
-
-.btnCreate{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 41px;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    background: #FDFEFF;
-    margin-bottom: 22px;
-}
-
-.btnCreate a{
-    color: #ED6D25;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: normal;
-    cursor: pointer;
-    text-decoration: none;  
-}
-
-.forgot{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.forgot a{
-    color: #ED6D25;
-    font-size: 14px;
-    text-decoration: underline;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 @media (min-width: 769px) and (max-width: 1024px){

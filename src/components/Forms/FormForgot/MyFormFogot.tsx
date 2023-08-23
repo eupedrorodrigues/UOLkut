@@ -1,6 +1,5 @@
 import Icon from '../../../assets/ps_orkut.svg';
 import styles from './MyFormFogot.module.css';
-import InputEP from '../Email&Pass/InputEP';
 
 type Props = {}
 
