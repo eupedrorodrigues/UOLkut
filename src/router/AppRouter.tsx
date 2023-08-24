@@ -17,6 +17,7 @@ const AppRouter = (props: Props) => {
             <Route path="/Register" element={<Register />} /> 
             <Route path="/NewPass" element={<NewPass />} /> 
             <Route path="/ForgotPass" element={<ForgotPass />} /> 
+            <Route path='/Profile' element={<Profile />}/>
            </Routes>
            {/* <Profile /> */}
         </BrowserRouter>

@@ -1,12 +1,20 @@
 import { useEffect, useState } from 'react';
-import Icon from '../../../assets/ps_orkut.svg';
-import styles from './MyFormRegister.module.css';
 import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
 import { firebaseConfig } from '../../../services/firebaseConfig';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '../../../services/firebaseConfig';
+import Icon from '../../../assets/ps_orkut.svg';
+import styles from './MyFormRegister.module.css';
+import { useNavigate } from 'react-router-dom';
+import { UserCredential } from 'firebase/auth';
 
-type Props = {}
+type Props = {
+    
+}
 
-const MyFormRegister = (props: Props) => {
+const MyFormRegister: React.FC = (props: Props) => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,32 +23,59 @@ const MyFormRegister = (props: Props) => {
     const [work, setWork] = useState('');
     const [country, setCountry] = useState('');
     const [city, setCity] = useState('');
-    const [relat, setRelat] = useState('');
-    const [users, setUsers] = useState([]);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth)
 
-    const db = getFirestore(firebaseConfig)
-    const userCollectionRef = collection(db, "datausers") 
 
-    async function createrUser() {
-        const user = await addDoc(userCollectionRef,{
-            email, 
-            password, 
-            name, 
-            date, 
-            work, 
-            country,
-            city,
-        });
-        console.log("Dados salvos com sucesso",user.id)
+    const [loading, setLoading] = useState(false);
+
+    const db = getFirestore(firebaseConfig);
+    const userCollectionRef = collection(db, "datausers");
+
+    async function createUser() {
+        setLoading(true);
+        try {
+            
+            const userCredential: UserCredential | undefined = await createUserWithEmailAndPassword(email, password);
+            const user = userCredential?.user;
+
+            if (!email || !password || !name || !date || !work || !country || !city) {
+                alert('Error: Preencha todos os campos');
+            } else {
+                await addDoc(userCollectionRef, {
+                    uid: user?.uid,
+                    name,
+                    date,
+                    work,
+                    country,
+                    city,
+                });
+                console.log("Dados salvos com sucesso", user?.uid);
+                navigate('/Login');
+            }
+        } catch (error) {
+            console.error('Erro ao criar usuário:', error);
+        } finally {
+            setLoading(false);
+        }
     }
 
-    useEffect(() => {
-        const getUsers = async () => {
-            const data = await getDocs(userCollectionRef);
-            console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-        }
-        getUsers();
-    },[])
+    if (loading) {
+        return <p>Carregando...</p>;
+    }
+    
+
+    // Tela de login e pefil
+    // useEffect(() => {
+    //     const getUsers = async () => {
+    //         const data = await getDocs(userCollectionRef);
+    //         console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+    //     }
+    //     getUsers();
+    // },[])
         
   return (
     <div>
@@ -70,7 +105,6 @@ const MyFormRegister = (props: Props) => {
                 <input 
                     placeholder='Nome' 
                     type="text"
-
                     value={name}
                     onChange={(e) => setName(e.target.value)} 
                     required
@@ -112,7 +146,7 @@ const MyFormRegister = (props: Props) => {
                     required/>
                 </div>
             </div>
-            {/* <div className={styles.inputRow}>
+            <div className={styles.inputRow}>
                 <div className={styles.inputSelect}>
                     <select>
                         <option value="">Solteiro</option>
@@ -122,8 +156,8 @@ const MyFormRegister = (props: Props) => {
                         <option value="">Preocupado</option>
                     </select>
                 </div>
-            </div> */}
-            <button className={styles.btnLogin} onClick={createrUser}>Criar conta</button>
+            </div>
+            <button className={styles.btnLogin} onClick={createUser}>Criar conta</button>
         </form>
     </div>
     </div>

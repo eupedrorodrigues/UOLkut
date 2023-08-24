@@ -3,12 +3,13 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../../services/firebaseConfig';
 import Icon from '../../../assets/ps_orkut.svg'
 import styles from './MyFormLogin.module.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type Props = {}
 
 const MyFormLogin = (props: Props) => {
 
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [
@@ -18,9 +19,14 @@ const MyFormLogin = (props: Props) => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth)
 
-    function handleLogin(e:any){
+    async function authLogin(e:any){
         e.preventDefault();
-        createUserWithEmailAndPassword(email, password);
+        const create = await createUserWithEmailAndPassword(email, password);
+        if (!email || !password){
+            alert('Error: Preencha todos os campos')
+        }else{
+            navigate('/Profile')
+        }
     }
 
     if(loading){
@@ -58,7 +64,7 @@ const MyFormLogin = (props: Props) => {
                     Lembrar minha senha
                 </label>
             </div>
-            <button className={styles.btnLogin} onClick={handleLogin}>Entrar na conta</button>
+            <button className={styles.btnLogin} onClick={authLogin}>Entrar na conta</button>
             <div className={styles.btnCreate}>
                 <Link  to="/Register">Criar uma conta</Link>
                 
