@@ -2,6 +2,7 @@ import styles from "./Friends.module.css";
 import { friendAvatars } from "../../data";
 
 export function Friends() {
+  console.log(friendAvatars);
   return (
     <section className={styles.categoryContainer}>
       <section className={styles.topicSection}>

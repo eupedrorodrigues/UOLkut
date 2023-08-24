@@ -28,7 +28,7 @@ export const Profile = () => {
             <Friends />
           </section>
         </section>
-
+        
         <ProfileInfo />
 
         <section className={`${styles.isDesktop} ${styles.rightContainer}`}>

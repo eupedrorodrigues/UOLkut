@@ -18,6 +18,7 @@ const AppRouter = (props: Props) => {
             <Route path="/NewPass" element={<NewPass />} /> 
             <Route path="/ForgotPass" element={<ForgotPass />} /> 
            </Routes>
+           {/* <Profile /> */}
         </BrowserRouter>
     </div>
   )
