@@ -1,4 +1,3 @@
-
 import Header from '../../components/Header/Header'
 import LayoutImg from '../../components/LayoutImg/LayoutImg';
 import styles from './Login.module.css'
@@ -6,9 +5,8 @@ import Footer from '../../components/Footer/Footer';
 import MyFormLogin from '../../components/Forms/FormLogin/MyFormLogin';
 
 
-type Props = {}
 
-const Login = (props: Props) => {
+const Login = () => {
 
   return (
     <div>
@@ -17,7 +15,7 @@ const Login = (props: Props) => {
           <main className={styles.wrapperMain}>
               <div className={styles.wrapperCards}>
                 <LayoutImg />
-                <MyFormLogin /> 
+                <MyFormLogin />
               </div>
           </main>
         </div>

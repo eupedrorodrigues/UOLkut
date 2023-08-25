@@ -1,14 +1,14 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
-import Login from '../pages/Login/Login'
-import Register from '../pages/Register/Register'
-import { Profile } from '../pages/Profile'
-import NewPass from '../pages/NewPass/NewPass'
-import ForgotPass from '../pages/ForgotPass/ForgotPass'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Login from '../pages/Login/Login';
+import Register from '../pages/Register/Register';
+import { Profile } from '../pages/Profile';
+import NewPass from '../pages/NewPass/NewPass';
+import ForgotPass from '../pages/ForgotPass/ForgotPass';
 
-type Props = {}
 
-const AppRouter = (props: Props) => {
+
+
+const AppRouter = () => {
   return (
     <div>
         <BrowserRouter>
@@ -19,7 +19,6 @@ const AppRouter = (props: Props) => {
             <Route path="/ForgotPass" element={<ForgotPass />} /> 
             <Route path='/Profile' element={<Profile />}/>
            </Routes>
-           {/* <Profile /> */}
         </BrowserRouter>
     </div>
   )

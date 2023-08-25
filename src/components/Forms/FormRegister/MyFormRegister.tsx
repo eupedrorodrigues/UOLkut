@@ -6,16 +6,14 @@ import { auth } from '../../../services/firebaseConfig';
 import Icon from '../../../assets/ps_orkut.svg';
 import styles from './MyFormRegister.module.css';
 import { useNavigate } from 'react-router-dom';
-import { UserCredential } from 'firebase/auth';
 
-type Props = {
-    
-}
-
+ 
+type Props = {}
+ 
 const MyFormRegister: React.FC = (props: Props) => {
 
     const navigate = useNavigate();
-
+ 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -23,59 +21,54 @@ const MyFormRegister: React.FC = (props: Props) => {
     const [work, setWork] = useState('');
     const [country, setCountry] = useState('');
     const [city, setCity] = useState('');
+    const [relationship, setRelationship] = useState('')
     const [
         createUserWithEmailAndPassword,
         user,
         error,
     ] = useCreateUserWithEmailAndPassword(auth)
-
-
+ 
+ 
     const [loading, setLoading] = useState(false);
-
+ 
     const db = getFirestore(firebaseConfig);
     const userCollectionRef = collection(db, "datausers");
-
-    async function createUser() {
+ 
+    async function createUser(e: any) {
+        e.preventDefault();
         setLoading(true);
-        try {
-            
-            const userCredential: UserCredential | undefined = await createUserWithEmailAndPassword(email, password);
-            const user = userCredential?.user;
-
-            if (!email || !password || !name || !date || !work || !country || !city) {
-                alert('Error: Preencha todos os campos');
-            } else {
-                await addDoc(userCollectionRef, {
-                    uid: user?.uid,
-                    name,
-                    date,
-                    work,
-                    country,
-                    city,
-                });
-                console.log("Dados salvos com sucesso", user?.uid);
-                navigate('/Login');
-            }
-        } catch (error) {
-            console.error('Erro ao criar usuário:', error);
-        } finally {
-            setLoading(false);
+        if (!email || !password || !name || !date || !work || !country || !city) {
+          alert("Error: Preencha todos os campos");
+          setLoading(false);
+          return;
         }
-    }
-
+        try {
+          const create = await createUserWithEmailAndPassword(email, password);
+          const user = create?.user;
+          console.log({ create });
+          console.log({ user });
+          const addDocFirebase = await addDoc(userCollectionRef, {
+            uid: user?.uid,
+            name,
+            date,
+            work,
+            country,
+            city,
+          });
+          console.log({ addDocFirebase });
+          console.log("Dados salvos com sucesso", user?.uid);
+          navigate("/");
+        } catch (error) {
+          console.error("Erro ao criar usuário:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
+ 
     if (loading) {
         return <p>Carregando...</p>;
     }
-    
-
-    // Tela de login e pefil
-    // useEffect(() => {
-    //     const getUsers = async () => {
-    //         const data = await getDocs(userCollectionRef);
-    //         console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
-    //     }
-    //     getUsers();
-    // },[])
+ 
         
   return (
     <div>
@@ -110,58 +103,50 @@ const MyFormRegister: React.FC = (props: Props) => {
                     required
                     />
             </div>
+            <div className={styles.wrapperInput}>
+                <input 
+                  type="date" 
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}/>
+
+                <input 
+                  type="text"
+                  value={work}
+                  onChange={(e) => setWork(e.target.value)}
+                  placeholder='Profissão' />
+            </div>
+            <div className={styles.wrapperInput}>
+                <input 
+                  type="text"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  placeholder='País'/>
+
+                <input 
+                  type="text" 
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder='City' />
+            </div>
+            {/* <div className={styles.wrapperSelect}>
+                <select
+                  // value={relationship}
+                  // onChange={(e) => setRelationship(e.target.value)}
+                >
+                    <option>Relacionamento</option>
+                    <option>Solteiro</option>
+                    <option>Casado</option>
+                    <option>Divorciado</option>
+                    <option>Namorando</option>
+                    <option>Preocupado</option>
+                </select>
+            </div> */}
             
-            <div className={styles.inputRow}>
-                <div className={styles.inputBox}>
-                    <input 
-                    type="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)} 
-                    required/>
-                </div>
-                <div className={styles.inputBox}>
-                    <input 
-                    type="text" 
-                    placeholder='Profissão' 
-                    value={work}
-                    onChange={(e) => setWork(e.target.value)} 
-                    required/>
-                </div>
-            </div>
-            <div className={styles.inputRow}> 
-                <div className={styles.inputBox}>
-                    <input 
-                    type="text" 
-                    placeholder='País'
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)} 
-                    required/>
-                </div>
-                <div className={styles.inputBox}>
-                    <input 
-                    type="text" 
-                    placeholder='Cidade' 
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)} 
-                    required/>
-                </div>
-            </div>
-            <div className={styles.inputRow}>
-                <div className={styles.inputSelect}>
-                    <select>
-                        <option value="">Solteiro</option>
-                        <option value="">Casado</option>
-                        <option value="">Divorciado</option>
-                        <option value="">Namorando</option>
-                        <option value="">Preocupado</option>
-                    </select>
-                </div>
-            </div>
             <button className={styles.btnLogin} onClick={createUser}>Criar conta</button>
         </form>
     </div>
     </div>
   )
 }
-
+ 
 export default MyFormRegister
