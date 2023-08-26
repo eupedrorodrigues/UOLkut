@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Icon from '../../../assets/ps_orkut.svg'
-import styles from './MyFormLogin.module.css'
+import styles from './MyFormLogin.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -12,7 +12,8 @@ const MyFormLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const AuthLogin =  () => {
+  const AuthLogin =  (event: React.SyntheticEvent) => {
+    event.preventDefault();
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -23,7 +24,7 @@ const MyFormLogin = () => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode,errorMessage);
+      console.log("Autentição de email e senhas não conferem",errorCode,errorMessage);
     });
   }   
     
@@ -31,7 +32,7 @@ const MyFormLogin = () => {
   return (
     <div className={styles.formBox}>
         <img style={{margin: '10px'}} src={Icon} alt="" /> 
-        <h2>Acesse o Orkut</h2>
+        <h2>Acesse o Uolkut</h2>
         <form>
             <div className={styles.inputBox}>
                 <input 

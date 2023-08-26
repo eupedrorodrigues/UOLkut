@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './LayoutImg.module.css';
 import People from '../../assets/unsplash_g1Kr4Ozfoac.svg'
 

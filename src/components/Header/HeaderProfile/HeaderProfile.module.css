@@ -47,6 +47,11 @@
   cursor: pointer;
 }
 
+.widthIcon{
+  width: 1rem !important;
+  height: 0.8rem !important;
+}
+
 @media (max-width: 900px) {
   .settings_container {
     gap: 0.5rem;

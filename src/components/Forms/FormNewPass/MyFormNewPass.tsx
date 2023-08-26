@@ -1,4 +1,4 @@
-import Icon from  '../../../assets/ps_orkut.svg';
+import Icon from '../../../assets/ps_orkut.svg'
 import styles from './MyFormNewPass.module.css';
 
 type Props = {}

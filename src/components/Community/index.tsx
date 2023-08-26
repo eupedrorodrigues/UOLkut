@@ -2,6 +2,9 @@ import styles from "./Community.module.css";
 import { communityAvatars } from "../../data";
 
 export function Community() {
+
+  
+
   return (
     <section className={styles.categoryContainer}>
       <section className={styles.topicSection}>
@@ -11,14 +14,12 @@ export function Community() {
       </section>
 
       <section className={styles.contentSection}>
-        {communityAvatars.map((avatar, key) => {
-          return (
+        {communityAvatars.map((avatar, key) => 
             <div key={key} className={styles.contentBox}>
               <img className={styles.contentIcon} src={avatar.src} />
               <p className={styles.contentTitle}>{avatar.title}</p>
             </div>
-          );
-        })}
+        )}
       </section>
     </section>
   );

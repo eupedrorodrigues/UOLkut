@@ -19,9 +19,9 @@ export const HeaderProfile = () => {
       <InputSearch className="isDesktop" />
 
       <div className={styles.settings_container}>
-        <img src={profileSettingsIcon} alt="" />
-        <p>Iuri Silva</p>
-        <img src={caretDownSettingsIcon} alt="" />
+        <img src={profileSettingsIcon} />
+        <p>Gabriel Barbosa</p>
+        <img src={caretDownSettingsIcon} className={styles.widthIcon}/>
       </div>
     </>
   );

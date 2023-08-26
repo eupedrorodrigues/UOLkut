@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState, CSSProperties } from 'react';
 import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
 import { firebaseConfig } from '../../../services/firebaseConfig';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../../services/firebaseConfig';
-import Icon from '../../../assets/ps_orkut.svg';
+import Icon from '../../../assets/ps_orkut.svg'
 import styles from './MyFormRegister.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,9 +11,8 @@ import { useNavigate } from 'react-router-dom';
 type Props = {}
  
 const MyFormRegister: React.FC = (props: Props) => {
-
+    
     const navigate = useNavigate();
- 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -27,6 +26,14 @@ const MyFormRegister: React.FC = (props: Props) => {
         user,
         error,
     ] = useCreateUserWithEmailAndPassword(auth)
+
+  const civilStatusOptions = [
+      'Solteiro',
+      'Casado',
+      'Divorciado',
+      'Namorando',
+      'Preocupado'
+    ];
  
  
     const [loading, setLoading] = useState(false);
@@ -37,7 +44,7 @@ const MyFormRegister: React.FC = (props: Props) => {
     async function createUser(e: any) {
         e.preventDefault();
         setLoading(true);
-        if (!email || !password || !name || !date || !work || !country || !city) {
+        if (!email || !password || !name || !date || !work || !country || !city || !relationship) {
           alert("Error: Preencha todos os campos");
           setLoading(false);
           return;
@@ -54,6 +61,7 @@ const MyFormRegister: React.FC = (props: Props) => {
             work,
             country,
             city,
+            relationship,
           });
           console.log({ addDocFirebase });
           console.log("Dados salvos com sucesso", user?.uid);
@@ -71,10 +79,11 @@ const MyFormRegister: React.FC = (props: Props) => {
  
         
   return (
+
     <div>
         <div className={styles.formBox}>
             <img style={{margin: '10px', paddingTop: '20px'}} src={Icon} alt="" /> 
-            <h2>Acesse o Orkut</h2>
+            <h2>Acesse o Uolkut</h2>
         <form>
             <div className={styles.inputBox}>
                 <input 
@@ -82,7 +91,6 @@ const MyFormRegister: React.FC = (props: Props) => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    required
                     />
             </div>
             <div className={styles.inputBox}>
@@ -91,7 +99,6 @@ const MyFormRegister: React.FC = (props: Props) => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} 
-                    required
                     />
             </div>
             <div className={styles.inputBox}>
@@ -100,7 +107,6 @@ const MyFormRegister: React.FC = (props: Props) => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)} 
-                    required
                     />
             </div>
             <div className={styles.wrapperInput}>
@@ -128,19 +134,16 @@ const MyFormRegister: React.FC = (props: Props) => {
                   onChange={(e) => setCity(e.target.value)}
                   placeholder='City' />
             </div>
-            {/* <div className={styles.wrapperSelect}>
-                <select
-                  // value={relationship}
-                  // onChange={(e) => setRelationship(e.target.value)}
-                >
-                    <option>Relacionamento</option>
-                    <option>Solteiro</option>
-                    <option>Casado</option>
-                    <option>Divorciado</option>
-                    <option>Namorando</option>
-                    <option>Preocupado</option>
-                </select>
-            </div> */}
+            <div className={styles.wrapperSelect}>
+              <select value={relationship} onChange={(e) => setRelationship(e.target.value)}>
+                <option value="" disabled>Relacionamento</option>
+                  {civilStatusOptions.map(status => 
+                    (<option key={status} value={status}>
+                  {status}
+                </option>
+                ))}
+              </select>
+            </div>
             
             <button className={styles.btnLogin} onClick={createUser}>Criar conta</button>
         </form>

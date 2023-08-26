@@ -1,4 +1,4 @@
-import Icon from '../../../assets/ps_orkut.svg';
+import Icon from '../../../assets/ps_orkut.svg'
 import styles from './MyFormFogot.module.css';
 
 type Props = {}
