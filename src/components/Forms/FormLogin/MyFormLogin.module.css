@@ -34,13 +34,26 @@
     background: #eff3f8;
 }
 
-.inputBox input{
+.emailError{
     width: 100%;
     height: 100%;
     background: transparent;
     border: none;
     outline: none;
     padding-left: 2%;
+    border-radius: 8px;
+    border: 1px solid red;
+}
+
+.defaultInput{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 2%;
+    border-radius: 8px;
+    border: none;
 }
 
 .checkboxContainer {

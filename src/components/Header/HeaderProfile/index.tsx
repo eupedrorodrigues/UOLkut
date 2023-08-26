@@ -1,6 +1,5 @@
 import { InputSearch } from "../../InputSearch";
 import styles from "./HeaderProfile.module.css";
-
 import profileSettingsIcon from "../../../assets/images/profileIcon.svg";
 import caretDownSettingsIcon from "../../../assets/CaretDown.svg";
 

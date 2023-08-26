@@ -1,5 +1,5 @@
-import { useState, CSSProperties } from 'react';
-import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
+import { useState } from 'react';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { firebaseConfig } from '../../../services/firebaseConfig';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../../services/firebaseConfig';
@@ -47,6 +47,10 @@ const MyFormRegister: React.FC = (props: Props) => {
         if (!email || !password || !name || !date || !work || !country || !city || !relationship) {
           alert("Error: Preencha todos os campos");
           setLoading(false);
+          return; 
+        }else if(password.length < 6){
+          alert("A sua senha deve conter mais de 6 números!");
+          setLoading(false);
           return;
         }
         try {
@@ -73,9 +77,6 @@ const MyFormRegister: React.FC = (props: Props) => {
         }
       }
  
-    if (loading) {
-        return <p>Carregando...</p>;
-    }
  
         
   return (
@@ -145,7 +146,9 @@ const MyFormRegister: React.FC = (props: Props) => {
               </select>
             </div>
             
-            <button className={styles.btnLogin} onClick={createUser}>Criar conta</button>
+            <button className={styles.btnLogin} onClick={createUser}>
+             {loading ? 'Carregando...' : 'Criar conta'} 
+            </button>
         </form>
     </div>
     </div>
