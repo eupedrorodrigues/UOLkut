@@ -46,7 +46,7 @@ const MyFormLogin = () => {
 
   return (
     <div className={styles.formBox}>
-      <img style={{ margin: '10px' }} src={Icon} alt="" /> 
+      <img style={{ margin: '10px' }} src={Icon} /> 
       <h2>Acesse o Uolkut</h2>
       <form>
         <div className={styles.inputBox}>

@@ -63,28 +63,8 @@ export function ProfileInfo() {
           <dd>22</dd>
         </div>
         <div>
-          <dt>Interesses no Orkut:</dt>
-          <dd>Solteiro</dd>
-        </div>
-        <div>
           <dt>Quem sou eu:</dt>
           <dd>Programador</dd>
-        </div>
-        <div>
-          <dt>Filhos:</dt>
-          <dd>Não</dd>
-        </div>
-        <div>
-          <dt>Sexo:</dt>
-          <dd>Masculino</dd>
-        </div>
-        <div>
-          <dt>Fumo:</dt>
-          <dd>Não</dd>
-        </div>
-        <div>
-          <dt>Bebo:</dt>
-          <dd>Depende do dia</dd>
         </div>
         <div>
           <dt>Moro:</dt>
@@ -94,7 +74,7 @@ export function ProfileInfo() {
           <dt>País:</dt>
           <dd>Brasil</dd>
         </div>
-        <div>
+        <div style={{marginBottom: '15rem'}}>
           <dt>Cidade natal:</dt>
           <dd>São Paulo</dd>
         </div>
