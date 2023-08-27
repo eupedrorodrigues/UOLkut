@@ -1,12 +1,54 @@
 import styles from "./ProfileInfo.module.css";
-
 import star from "../../assets/images/Star.svg";
 import smiley from "../../assets/images/Smiley.svg";
 import thumbsUp from "../../assets/images/ThumbsUp.svg";
 import heart from "../../assets/images/Heart.svg";
 import bubble from "../../assets/images/Bubble.svg";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { useContext, useEffect, useState } from "react";
+import { MyContext } from "../../context/UserContext";
+
+type UserData = {
+  name: string;
+  email: string;
+  password: string;
+  country: string;
+  city: string;
+  date: string;
+  work: string;
+  relationship: string;
+  age: number;
+  uid: string;
+} 
 
 export function ProfileInfo() {
+
+  const [ profileData, setProfileData ] = useState<UserData | null>(null)
+  const { userUid } = useContext(MyContext)!;
+
+
+  useEffect(() => {
+    const getProfileData = async () => {
+      try {
+        console.log(userUid);
+        console.log('teste');
+        const db = getFirestore();
+        const q = query(collection(db, "datausers"), where("uid", "==", userUid));
+  
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, " => ", doc.data());
+          setProfileData(doc.data() as UserData);
+        });
+      } catch (error) { 
+        console.error("Error fetching user data:", error);
+      }
+    }
+  },[])
+  
+  
+
+
   return (
     <section className={styles.profileInfoContainer}>
       <header>

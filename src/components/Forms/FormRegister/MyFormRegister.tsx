@@ -37,6 +37,20 @@ const MyFormRegister: React.FC = () => {
  
     const db = getFirestore(firebaseConfig);
     const userCollectionRef = collection(db, "datausers");
+
+    function calculateAge(birthdayDate: string) {
+      const today = new Date();
+      const birth = new Date(birthdayDate);
+      let age = today.getFullYear() - birth.getFullYear();
+      const monthDiff = today.getMonth() - birth.getMonth();
+  
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        age--;
+      }
+  
+      return age;
+    }
+    const calculatedAge = calculateAge(date)
  
     async function createUser(e: any) {
         e.preventDefault();
@@ -63,6 +77,7 @@ const MyFormRegister: React.FC = () => {
             country,
             city,
             relationship,
+            calculatedAge
           });
           console.log({ addDocFirebase });
           console.log("Dados salvos com sucesso", user?.uid);

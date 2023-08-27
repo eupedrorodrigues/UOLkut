@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Icon from '../../../assets/ps_orkut.svg';
-import Logo from '../../../assets/UOLkut.svg'
 import styles from './MyFormLogin.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { MyContext } from '../../../context/UserContext';
 
 const MyFormLogin = () => {
   const navigate = useNavigate();
@@ -13,6 +13,8 @@ const MyFormLogin = () => {
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { setUserUid } = useContext(MyContext)!;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, field: string) => {
     const value = e.target.value;
@@ -33,6 +35,7 @@ const MyFormLogin = () => {
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        setUserUid(userCredential.user?.uid)
         console.log(user);
         navigate('/Profile');
       })
