@@ -1,5 +1,3 @@
-import { initializeApp } from "firebase/app";
-import { useEffect, useState } from "react";
 import styles from "./ProfileUser.module.css";
 import imageUser from "../../assets/images/profileIcon.svg";
 

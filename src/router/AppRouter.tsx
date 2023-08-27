@@ -4,6 +4,7 @@ import Register from '../pages/Register/Register';
 import { Profile } from '../pages/Profile';
 import NewPass from '../pages/NewPass/NewPass';
 import ForgotPass from '../pages/ForgotPass/ForgotPass';
+import EditProfile from '../pages/EditProfile/EditProfile';
 
 
 
@@ -18,6 +19,7 @@ const AppRouter = () => {
             <Route path="/NewPass" element={<NewPass />} /> 
             <Route path="/ForgotPass" element={<ForgotPass />} /> 
             <Route path='/Profile' element={<Profile />}/>
+            <Route path='/EditProfile' element={<EditProfile />}/>
            </Routes>
         </BrowserRouter>
     </div>

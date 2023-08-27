@@ -75,7 +75,7 @@ export function ProfileInfo() {
           <dd>Brasil</dd>
         </div>
         <div style={{marginBottom: '15rem'}}>
-          <dt>Cidade natal:</dt>
+          <dt>Cidade:</dt>
           <dd>São Paulo</dd>
         </div>
         <div className={styles.multiple_options_field_details}>

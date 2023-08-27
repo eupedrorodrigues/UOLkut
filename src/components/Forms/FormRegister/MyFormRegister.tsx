@@ -8,9 +8,7 @@ import styles from './MyFormRegister.module.css';
 import { useNavigate } from 'react-router-dom';
 
  
-type Props = {}
- 
-const MyFormRegister: React.FC = (props: Props) => {
+const MyFormRegister: React.FC = () => {
     
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -34,8 +32,7 @@ const MyFormRegister: React.FC = (props: Props) => {
       'Namorando',
       'Preocupado'
     ];
- 
- 
+
     const [loading, setLoading] = useState(false);
  
     const db = getFirestore(firebaseConfig);
@@ -77,8 +74,6 @@ const MyFormRegister: React.FC = (props: Props) => {
         }
       }
  
- 
-        
   return (
 
     <div>

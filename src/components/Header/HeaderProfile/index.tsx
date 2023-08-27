@@ -2,10 +2,12 @@ import { InputSearch } from "../../InputSearch";
 import styles from "./HeaderProfile.module.css";
 import profileSettingsIcon from "../../../assets/images/profileIcon.svg";
 import caretDownSettingsIcon from "../../../assets/CaretDown.svg";
+import Logo from '../../../assets/UOLkut.svg'
 
 export const HeaderProfile = () => {
   return (
     <>
+      <img src={Logo} alt="" />
       <nav className={styles.nav}>
         <ul>
           <li>Início</li>
