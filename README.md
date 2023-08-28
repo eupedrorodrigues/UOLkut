@@ -15,7 +15,7 @@
 * Clone the repository from GitHub
 
   ```bash
-  git clone 
+  git clone https://github.com/eupedrorodrigues/UOLkut.git
   cd UOLkut
   ```
 * Install project dependencies
