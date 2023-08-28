@@ -22,7 +22,7 @@ export const Profile = () => {
 
         <section>
           <UserProfile />
-          <Button isNavigation path="/" text="Editar Perfil" />
+          <Button isNavigation path="EditProfile" text="Editar Perfil" />
 
           <section className={`${styles.isMobile} ${styles.dois}`}>
             <Friends />

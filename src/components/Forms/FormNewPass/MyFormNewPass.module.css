@@ -106,6 +106,7 @@
 @media (min-width: 769px) and (max-width: 1024px){
     .formBox{
         width: 450px;
+        margin-left: 0;
     } 
     .formBox h2{
         font-size: 32px; 
@@ -119,6 +120,7 @@
 @media (min-width: 481px) and (max-width: 768px){
     .formBox{
         width: 450px;
+        margin-left: 0;
     } 
     .formBox h2{
         font-size: 26px; 
@@ -131,8 +133,8 @@
 
 @media (min-width: 320px) and (max-width: 480px){
     .formBox{
-        
         width: 318px;
+        margin-left: 0;
     } 
 
     .formBox h2{
@@ -147,6 +149,7 @@
 @media (max-width: 319px){
     .formBox{
         width: 280px;
+        margin-left: 0;
     } 
 
     .formBox h2{

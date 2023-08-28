@@ -121,6 +121,7 @@
     .formBox{
         width: 450px;
         margin-left: none;
+        margin-left: 0;
     } 
     .formBox h2{
         font-size: 26px; 
@@ -135,6 +136,7 @@
     .formBox{
         width: 318px;
         margin-left: none;
+        margin-left: 0;
     } 
 
     .formBox h2{
@@ -150,6 +152,7 @@
     .formBox{
         width: 280px;
         margin-left: none;
+        margin-left: 0;
     } 
 
     .formBox h2{

@@ -1,5 +1,5 @@
 import styles from './EditUser.module.css';
-import imageUser from "../../assets/images/profileIcon.svg";
+import imageUser from "../../assets/User.svg";
 import Edit from '../../assets/Mode edit.svg'
 
 

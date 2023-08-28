@@ -12,7 +12,7 @@ export const Button = ({ isNavigation = false, path, text }: ButtonProps) => {
     <>
       {isNavigation ? (
         <button className={styles.edit_profile}>
-          <Link to={'/EditProfile'}>{text}</Link>
+          <Link to={path!}>{text}</Link>
         </button>
       ) : (
         <button className={styles.save_edit}>Salvar</button>

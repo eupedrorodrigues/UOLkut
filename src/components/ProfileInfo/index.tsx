@@ -24,6 +24,21 @@ export function ProfileInfo() {
   const [ profileData, setProfileData ] = useState<UserData | null>(null)
   const { userUid } = useContext(MyContext)!;
 
+  function calculateAge(birthdayDate: string) {
+    const today = new Date();
+    const birth = new Date(birthdayDate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+
+    return age;
+  }
+  const date = profileData?.date
+  const calculatedAge = calculateAge(date!)
+
 
   const getProfileData = async () => {
     try {
@@ -102,7 +117,7 @@ export function ProfileInfo() {
         </div>
         <div>
           <dt>Idade:</dt>
-          <dd>{profileData?.calculatedAge}</dd>
+          <dd>{calculatedAge}</dd>
         </div>
         <div>
           <dt>Quem sou eu:</dt>
