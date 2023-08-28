@@ -1,0 +1,25 @@
+.baseboard{
+    position: absolute;
+    background: #FDFEFF;
+    width: 100%;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.baseboard h6{
+    color: #ED6D25;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px){
+    .baseboard h6{
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.formBox{
+    border: 1px solid #ccc;
+    width: 350px;
+    height: 495px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #FDFEFF;
+    margin-left: 5%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.20);
+}
+
+.formBox h2{
+    color: #ED6D25;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.inputBox{
+    position: relative;
+    width: 280px;
+    height: 40px;
+    margin: 10px 0;
+    background: #eff3f8;
+}
+
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 1%;
+}
+
+.wrapperInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 280px;
+    height: 40px;
+    margin: 10px 0;
+    background: #eff3f8;
+}
+
+.wrapperInput input{
+    width: 45%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.wrapperSelect{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 280px;
+    height: 40px;
+    margin: 20px 0;
+    background: #eff3f8;
+}
+
+.wrapperSelect select{
+    width: 45%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.btnLogin{
+    width: 100%;
+    height: 41px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: #ED6D25;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+
+.btnLogin:hover{
+    background: #b7541b;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px){
+    .formBox{
+        width: 450px;
+        margin-left: none;
+    } 
+    .formBox h2{
+        font-size: 32px; 
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .formBox{
+        width: 450px;
+        margin-left: none;
+    } 
+    .formBox h2{
+        font-size: 26px; 
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+    .formBox{
+        width: 318px;
+        margin-left: none;
+    } 
+
+    .formBox h2{
+        font-size: 20px; 
+    }
+}
+
+@media (max-width: 319px){
+    .formBox{
+        width: 280px;
+        margin-left: none;
+    } 
+
+    .formBox h2{
+        font-size: 20px; 
+    }
+}
+

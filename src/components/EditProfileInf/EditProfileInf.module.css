@@ -1,0 +1,149 @@
+.profileInfoContainer {
+  background-color: var(--dark-30);
+  border-radius: 16px;
+  width: 37rem;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileInfoContainer h2{
+  color: #ED6D25;
+}
+
+.contentBox{
+  display: flex;
+  margin-top: 0.8rem
+}
+
+.inputBox{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 14rem;
+  height: 3rem;
+  margin-top: 0.8rem;
+  margin-left: 2rem;
+}
+
+.inputBox input{
+  width: 14rem;
+  height: 3rem;
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.wrapperSelect{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 280px;
+    height: 40px;
+    margin: 20px 0;
+    background: #eff3f8;
+}
+
+.wrapperSelect select{
+    width: 45%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.BtnSalve{
+  background: #ED6D25;
+  width: 15rem;
+  height: 2.8rem;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.BtnSalve:hover{
+  background: #b7541b;
+}
+
+
+
+ 
+@media (min-width: 769px) and (max-width: 1024px){
+
+  .profileInfoContainer {
+    margin-right: 1.5rem;
+  }
+
+  .contentBox{
+    width: 90%;
+  }
+
+}
+
+ 
+
+@media (min-width: 481px) and (max-width: 768px){
+
+  .profileInfoContainer {
+    margin-right: 1.5rem;
+    width: 27rem;
+    
+  }
+
+  .contentBox{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentBox{
+    width: 90%;
+  }
+
+}
+
+ 
+
+@media (min-width: 320px) and (max-width: 480px){
+
+  .profileInfoContainer {
+    margin-right: 1.5rem;
+    width: 27rem;
+    
+  }
+
+  .contentBox{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentBox{
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 319px){
+
+  .profileInfoContainer {
+    margin-right: 1.5rem;
+    width: 27rem;
+    
+  }
+
+  .contentBox{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentBox{
+    width: 50%;
+  }
+
+
+}

@@ -1,0 +1,156 @@
+.container_profile_user{
+    display: flex;
+    width: 17.5rem;
+    height: 25rem;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.container_desc_img_user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20.875rem;
+    width: 100%;
+    background-color: var(--dark-40);
+    border-radius: 0.938rem;
+}
+
+.circle_image_user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11.563rem;
+    width: 11.563rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--brand-color);
+    background-size: cover;
+}
+
+.image_user{
+    margin-bottom: 1.2rem;
+}
+
+.EditMet{
+    position: absolute;
+    padding: 0.5rem;
+    border: 0.3rem solid #ED6D25;
+    background: #fff;
+    border-radius: 10rem;
+    cursor: pointer;
+    margin-right: 8rem;
+    margin-top: 8rem;
+}
+
+.name_user{
+    margin-top: var(--xl);
+    font-size: var(--2xl);
+    color: var(--dark-10);
+}
+
+.desc_user{
+    margin-top: 0.938rem;
+    font-size: var(--lg);
+    color: var(--dark-10);
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px){
+
+    .container_profile_user{
+        width: 37rem;
+        height: 15rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .container_desc_img_user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20.875rem;
+        width: 100%;
+        background-color: var(--dark-40);
+        border-radius: 0.938rem;
+    }
+
+}
+
+ 
+
+@media (min-width: 481px) and (max-width: 768px){
+
+    .container_profile_user{
+        width: 27rem;
+        height: 15rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .container_desc_img_user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20.875rem;
+        width: 100%;
+        background-color: var(--dark-40);
+        border-radius: 0.938rem;
+    }
+
+}
+
+ 
+
+@media (min-width: 320px) and (max-width: 480px){
+
+    .container_profile_user{
+        width: 27rem;
+        height: 15rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .container_desc_img_user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20.875rem;
+        width: 100%;
+        background-color: var(--dark-40);
+        border-radius: 0.938rem;
+    }
+
+
+}
+
+ 
+
+@media (max-width: 319px){
+    .container_profile_user{
+        width: 27rem;
+        height: 15rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .container_desc_img_user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20.875rem;
+        width: 100%;
+        background-color: var(--dark-40);
+        border-radius: 0.938rem;
+    }
+}
