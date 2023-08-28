@@ -30,9 +30,9 @@ export function ProfileInfo() {
       console.log(userUid);
       console.log('teste');
       const db = getFirestore();
-      const q = query(collection(db, "datausers"), where("uid", "==", userUid));
+      const get = query(collection(db, "datausers"), where("uid", "==", userUid));
 
-      const querySnapshot = await getDocs(q);
+      const querySnapshot = await getDocs(get);
       querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data());
         setProfileData(doc.data() as UserData);
