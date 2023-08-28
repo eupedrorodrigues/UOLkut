@@ -18,7 +18,6 @@ const MyFormLogin = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, field: string) => {
     const value = e.target.value;
-
     if (field === 'email') {
       setEmail(value);
       setEmailError(value.trim() === '');

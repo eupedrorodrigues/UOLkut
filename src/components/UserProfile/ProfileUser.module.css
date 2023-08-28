@@ -27,10 +27,11 @@
     border: 3px solid var(--brand-color);
     position: center center;
     background-size: cover;
+    overflow: hidden;
 }
 
 .image_user{
-    position: center center;
+    margin-bottom: 1rem;
 }
 
 .name_user{
